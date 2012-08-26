@@ -1,14 +1,13 @@
 Begin:
-run %A_ScriptDir%/sfschlr.exe ;启动scifinder
-;判断是否登录成功
+run %A_ScriptDir%/sfschlr.exe ;start scifinder
 winwait,SciFinder Scholar
 winwait,SciFinder Scholar License Agreement,,3
 winwait,Problem Report,,3
-IfWinNotExist, Problem Report ;如果登录成功
+IfWinNotExist, Problem Report ;if login to sci
 {
     IfWinExist,SciFinder Scholar License Agreement ;double confirm to avoid false alarm
     {
-        MsgBox "登录成功" ;弹出提示窗口
+        MsgBox "登录成功" ;pop a msgbox to indicate success
         exitapp
     }
     else{
